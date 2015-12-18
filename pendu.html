@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="css/pendu.css"/>
+    <meta charset="utf-8">
+    <title>Pendu</title>
+</head>
+
+<body onload="randomWord()">
+  <div class="contenant">
+    <div id="affichage"></div>
+    <button onclick="remplir()">Entrer Lettres</button>
+    <button onclick="choisir()">Choisir un mot</button>
+  </div>
+
+  <script language="javascript">
+   var word = ["langue","chut","voile","blondinnet","photographe","graphiste","processing",
+   "rouge","vernis","voiture","bouche","amitie","bijoux","joyeux","planant","evasif",
+   "hilarant","bonnet","rire","pantalon","echarpe","saleté","jeu","Donald","Marsupilami",
+   "Barbapapa","code","mort"];
+  //  j'ai définit en amont mot choisis qui correspond au mot pioché en random
+   var motchoisit;
+    var randomChiffreAff;
+    //  je vérifie le nombre de mots dans mon tableau
+    // window.alert(mots)
+    // Une fonction pour mélanger mes mots
+    function randomWord(max,min){
+      return Math.floor(Math.random() * (max - min) + min);
+      // window.alert(word)
+    }
+    // une fonction pour afficher mes mots à partir du bouton avec l'appel Clic
+    function choisir(){
+      randomChiffreAff = randomWord(0,word.length);
+      // afficher le mot dans une windows alert
+      // random chiffre (lié au tableau) qui tire un mot lié à ce chiffre
+      // window.alert(word[randomChiffreAff]);
+      motchoisit = (word[randomChiffreAff]);
+      window.alert(motchoisit);
+    }
+    // var longueur =motchoisit.length;
+    function remplir(){
+      for (var i = 0; i < motchoisit.length; i++) {
+      document.getElementById("affichage").innerHTML += "<input>" + "</input>";
+      }
+      // window.alert(motchoisit.length)
+      // je teste que mon button remplir entre dans la div un Blop
+      // document.getElementById("affichage").innerHTML = "Blop";
+    }
+
+  </script>
+</body>
+</html>
